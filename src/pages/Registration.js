@@ -16,7 +16,7 @@ function Registration() {
 
   const onSubmit = (data) => {
     axios
-      .post("http://full-stack-api-pedrotech.herokuapp.com/auth", data)
+      .post("https://full-stack-api-pedrotech.herokuapp.com/auth", data)
       .then(() => {
         console.log(data);
       });

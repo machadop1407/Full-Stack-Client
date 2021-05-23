@@ -16,7 +16,7 @@ function Home() {
       history.push("/login");
     } else {
       axios
-        .get("http://full-stack-api-pedrotech.herokuapp.com/posts", {
+        .get("https://full-stack-api-pedrotech.herokuapp.com/posts", {
           headers: { accessToken: localStorage.getItem("accessToken") },
         })
         .then((response) => {
@@ -33,7 +33,7 @@ function Home() {
   const likeAPost = (postId) => {
     axios
       .post(
-        "http://full-stack-api-pedrotech.herokuapp.com/likes",
+        "https://full-stack-api-pedrotech.herokuapp.com/likes",
         { PostId: postId },
         { headers: { accessToken: localStorage.getItem("accessToken") } }
       )

@@ -14,13 +14,13 @@ function Post() {
 
   useEffect(() => {
     axios
-      .get(`http://full-stack-api-pedrotech.herokuapp.com/posts/byId/${id}`)
+      .get(`https://full-stack-api-pedrotech.herokuapp.com/posts/byId/${id}`)
       .then((response) => {
         setPostObject(response.data);
       });
 
     axios
-      .get(`http://full-stack-api-pedrotech.herokuapp.com/comments/${id}`)
+      .get(`https://full-stack-api-pedrotech.herokuapp.com/comments/${id}`)
       .then((response) => {
         setComments(response.data);
       });
@@ -29,7 +29,7 @@ function Post() {
   const addComment = () => {
     axios
       .post(
-        "http://full-stack-api-pedrotech.herokuapp.com/comments",
+        "https://full-stack-api-pedrotech.herokuapp.com/comments",
         {
           commentBody: newComment,
           PostId: id,
@@ -56,7 +56,7 @@ function Post() {
 
   const deleteComment = (id) => {
     axios
-      .delete(`http://full-stack-api-pedrotech.herokuapp.com/comments/${id}`, {
+      .delete(`https://full-stack-api-pedrotech.herokuapp.com/comments/${id}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -70,7 +70,7 @@ function Post() {
 
   const deletePost = (id) => {
     axios
-      .delete(`http://full-stack-api-pedrotech.herokuapp.com/posts/${id}`, {
+      .delete(`https://full-stack-api-pedrotech.herokuapp.com/posts/${id}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -82,7 +82,7 @@ function Post() {
     if (option === "title") {
       let newTitle = prompt("Enter New Title:");
       axios.put(
-        "http://full-stack-api-pedrotech.herokuapp.com/posts/title",
+        "https://full-stack-api-pedrotech.herokuapp.com/posts/title",
         {
           newTitle: newTitle,
           id: id,
@@ -96,7 +96,7 @@ function Post() {
     } else {
       let newPostText = prompt("Enter New Text:");
       axios.put(
-        "http://full-stack-api-pedrotech.herokuapp.com/posts/postText",
+        "https://full-stack-api-pedrotech.herokuapp.com/posts/postText",
         {
           newText: newPostText,
           id: id,
